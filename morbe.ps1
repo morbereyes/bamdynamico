@@ -38,8 +38,8 @@ Clear-Host
 
 Write-Host "";
 Write-Host "";
-Write-Host -ForegroundColor Purple " Cargando BAM - morbe  (no te estamos hackeando :V)" -NoNewLine
-Write-Host -ForegroundColor Green " discord.gg/dynamicpvp";
+Write-Host -ForegroundColor Magenta " Cargando BAM - morbe  (no te estamos hackeando :V)" -NoNewLine
+Write-Host -ForegroundColor White " discord.gg/dynamicpvp";
 Write-Host "";
 
 function Test-Admin {;$currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent());$currentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator);}
@@ -71,8 +71,8 @@ $Bam = Foreach ($Sid in $Users){$u++
             
         foreach($rp in $rpath){
            $BamItems = Get-Item -Path "$($rp)UserSettings\$Sid" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Property
-           Write-Host -ForegroundColor Green "Extrayendo " -NoNewLine
-           Write-Host -ForegroundColor Blue "$($rp)UserSettings\$SID"
+           Write-Host -ForegroundColor Magenta "Extrayendo " -NoNewLine
+           Write-Host -ForegroundColor Red "$($rp)UserSettings\$SID"
            $bi = 0 
 
             Try{
@@ -121,4 +121,4 @@ $Bam | Out-GridView -PassThru -Title "Entradas BAM: $($Bam.count)  - Zona Horari
 $sw.stop()
 $t = $sw.Elapsed.TotalMinutes
 Write-Host ""
-Write-Host "El script tardo $t Minutos" -ForegroundColor Purple
+Write-Host "El script tardo $t Minutos" -ForegroundColor Magenta
